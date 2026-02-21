@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CaregiverHub — TTSH Resource Centre</title>
+  <meta name="description" content="All-in-one resource hub for caregivers. Find self-care guidance, patient care resources, community support and clinical tools from Tan Tock Seng Hospital." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ── HEADER ──────────────────────────────────────────────── -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo-block">
+      <div class="logo-badge">TTSH</div>
+      <div>
+        <div class="logo-text">CaregiverHub</div>
+        <div class="logo-sub">Tan Tock Seng Hospital</div>
+      </div>
+    </div>
+
+    <div class="header-search">
+      <svg class="search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="globalSearch" placeholder="Search resources, conditions, topics…" aria-label="Search resources" autocomplete="off" />
+      <div class="search-dropdown" id="searchDropdown">
+        <div class="search-dropdown-header">Results</div>
+        <div id="searchResults"></div>
+      </div>
+    </div>
+
+    <nav class="header-nav" aria-label="Main navigation">
+      <button class="btn-nav active" onclick="window.location.href='index.html'">Home</button>
+      <button class="btn-nav" onclick="window.location.href='category.html?id=for-yourself'">For Yourself</button>
+      <button class="btn-nav" onclick="window.location.href='category.html?id=for-care-recipient'">For Patients</button>
+      <button class="btn-nav" onclick="window.location.href='category.html?id=tools-reference'">Tools</button>
+    </nav>
+  </div>
+</header>
+
+<!-- ── MAIN ─────────────────────────────────────────────────── -->
+<main class="main">
+
+  <!-- Hero -->
+  <section class="hero" style="margin-top:1.5rem">
+    <h1>Your Caregiver Resource Hub</h1>
+    <p>Evidence-based resources from Tan Tock Seng Hospital — to support you and the person you care for.</p>
+    <div class="hero-pills">
+      <button class="hero-pill" onclick="window.location.href='category.html?id=for-yourself'">Caregiver Self-Care</button>
+      <button class="hero-pill" onclick="window.location.href='category.html?id=for-care-recipient'">Patient Care Guidance</button>
+      <button class="hero-pill" onclick="window.location.href='category.html?id=community-support'">Community Support</button>
+      <button class="hero-pill" onclick="window.location.href='category.html?id=tools-reference'">Medication Guides</button>
+      <button class="hero-pill" onclick="window.location.href='subcategory.html?pillar=tools-reference&sub=know-your-meds'">Know Your Meds</button>
+    </div>
+  </section>
+
+  <!-- Quick Access Bar -->
+  <div class="quick-bar" role="complementary" aria-label="Quick access links">
+    <span class="quick-bar-label">Quick Access</span>
+    <a class="quick-link blue" href="https://form.gov.sg/5fbb689063ac950016770fbb" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+      Caregiver Assessment
+    </a>
+    <a class="quick-link teal" href="http://onelink.to/db857z" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+      CarePal App
+    </a>
+    <a class="quick-link orange" href="tel:18006506060">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+      AIC Hotline: 1800-650-6060
+    </a>
+    <a class="quick-link blue" href="https://www.ttsh.com.sg" target="_blank" rel="noopener">
+      TTSH Website ↗
+    </a>
+  </div>
+
+  <!-- Pillars Heading -->
+  <div class="section-header">
+    <h2 class="section-title">Browse by Category</h2>
+    <span class="section-count">4 categories · 50+ topics · 100+ resources</span>
+  </div>
+
+  <!-- Pillar Cards -->
+  <div class="pillar-grid" id="pillarGrid"></div>
+
+  <!-- Contact Strip -->
+  <div class="contact-strip" role="complementary" aria-label="Contact information">
+    <div class="contact-item">
+      <span class="contact-label">TTSH Main Line</span>
+      <span class="contact-value">6256 6011</span>
+    </div>
+    <div class="contact-item">
+      <span class="contact-label">AIC Link @ TTSH</span>
+      <span class="contact-value">1800-650-6060</span>
+    </div>
+    <div class="contact-item">
+      <span class="contact-label">Location</span>
+      <span class="contact-value">Centre for Health Activation, L1, TTSH Atrium Block</span>
+    </div>
+    <div class="contact-item">
+      <span class="contact-label">Website</span>
+      <span class="contact-value"><a href="https://www.ttsh.com.sg" target="_blank" rel="noopener" style="color:rgba(255,255,255,.8)">www.ttsh.com.sg</a></span>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── FOOTER ────────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <p>Content sourced from <a href="https://www.ttsh.com.sg" target="_blank" rel="noopener">Tan Tock Seng Hospital (TTSH)</a> and the National Healthcare Group (NHG). For medical advice, please consult your healthcare provider.</p>
+    <p style="margin-top:.4rem">© 2026 CaregiverHub · Resources last reviewed February 2026</p>
+  </div>
+</footer>
+
+<script src="data/resources.js"></script>
+<script src="app.js"></script>
+<script>
+  renderPillarGrid();
+  initSearch();
+</script>
+
+</body>
+</html>

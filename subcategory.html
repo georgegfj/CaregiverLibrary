@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CaregiverHub — Resources</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ── HEADER ──────────────────────────────────────────────── -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo-block">
+      <div class="logo-badge">TTSH</div>
+      <div>
+        <div class="logo-text">CaregiverHub</div>
+        <div class="logo-sub">Tan Tock Seng Hospital</div>
+      </div>
+    </div>
+
+    <div class="header-search">
+      <svg class="search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="globalSearch" placeholder="Search resources…" aria-label="Search resources" autocomplete="off" />
+      <div class="search-dropdown" id="searchDropdown">
+        <div class="search-dropdown-header">Results</div>
+        <div id="searchResults"></div>
+      </div>
+    </div>
+
+    <nav class="header-nav" aria-label="Main navigation">
+      <button class="btn-nav" onclick="window.location.href='index.html'">Home</button>
+      <button class="btn-nav" onclick="window.location.href='category.html?id=for-yourself'">For Yourself</button>
+      <button class="btn-nav" onclick="window.location.href='category.html?id=for-care-recipient'">For Patients</button>
+      <button class="btn-nav" onclick="window.location.href='category.html?id=tools-reference'">Tools</button>
+    </nav>
+  </div>
+</header>
+
+<!-- ── BREADCRUMB ───────────────────────────────────────────── -->
+<nav class="breadcrumb" aria-label="Breadcrumb" id="breadcrumb">
+  <a href="index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="#" id="breadcrumbCategory">Category</a>
+  <span class="sep">›</span>
+  <span class="current" id="breadcrumbCurrent">Topic</span>
+</nav>
+
+<!-- ── MAIN ─────────────────────────────────────────────────── -->
+<main class="main">
+
+  <!-- Subcategory Hero (populated by JS) -->
+  <div class="category-hero" id="subcategoryHero">
+    <div>
+      <button class="btn-back" id="backBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        Back
+      </button>
+      <h1 id="subcategoryTitle">Loading…</h1>
+      <p id="subcategoryDesc"></p>
+    </div>
+  </div>
+
+  <!-- Resource Count -->
+  <div class="section-header">
+    <h2 class="section-title">Resources</h2>
+    <span class="section-count" id="resourceCount"></span>
+  </div>
+
+  <!-- Resource Cards -->
+  <div class="resource-grid" id="resourceGrid"></div>
+
+  <!-- Related Topics -->
+  <div style="margin-top:2.5rem">
+    <div class="section-header">
+      <h2 class="section-title">Other Topics in This Category</h2>
+    </div>
+    <div class="subcat-grid" id="relatedGrid"></div>
+  </div>
+
+</main>
+
+<!-- ── FOOTER ────────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <p>Content sourced from <a href="https://www.ttsh.com.sg" target="_blank" rel="noopener">Tan Tock Seng Hospital (TTSH)</a>. For medical advice, please consult your healthcare provider.</p>
+  </div>
+</footer>
+
+<script src="data/resources.js"></script>
+<script src="app.js"></script>
+<script>
+  renderSubcategoryPage();
+  initSearch();
+</script>
+
+</body>
+</html>
